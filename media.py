@@ -9,6 +9,8 @@ import urllib.parse
 import urllib.request
 import re
 import json
+import requests
+from bs4 import BeautifulSoup
 from mako.template import Template
 from unicodedata import normalize
 
@@ -128,6 +130,18 @@ def get_omdb_info(imdb_id):
     params = dict(i=imdb_id, tomatoes=True, apikey=os.environ['omdb_api_key'])
     return get_json(url, params)
 
+def get_letterboxd_rating(tmdb_id):
+    url = f"https://letterboxd.com/tmdb/{tmdb_id}/"
+    response = requests.get(url)
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.content, 'html.parser')
+
+        # Find the <meta> tag with name="twitter:data2"
+        meta_tag = soup.find('meta', attrs={'name': 'twitter:data2'})
+        if meta_tag:
+            return meta_tag.get('content')
+
+    return 'N/A'
 
 def show_item_info(item, media_type):
 
@@ -243,9 +257,10 @@ def show_item_info(item, media_type):
 
     # Letterboxd
     if INCLUDE_LETTERBOXD:
+        letterboxd_rating = get_letterboxd_rating(item['id'])
         search_url = LETTERBOXD_URL + str(item['id'])
         all_search_sites.append(search_url)
-        items.append({"title": 'Letterboxd',
+        items.append({"title": letterboxd_rating,
                       "subtitle": f"View '{item[title_key]}' on Letterboxd",
                       "icon": {"path": 'img/letterboxd.png'},
                       "valid": True,
