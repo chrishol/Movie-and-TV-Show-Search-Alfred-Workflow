@@ -3,7 +3,7 @@
 <plist version="1.0">
 	<dict>
 		<key>bundleid</key>
-		<string>com.mcknight.movies</string>
+		<string>com.chrishol.movies</string>
 		<key>connections</key>
 		<dict>
 			<key>1BD6325A-1219-4F0A-B4EE-DC9C96450986</key>
@@ -115,7 +115,7 @@
 			</array>
 		</dict>
 		<key>createdby</key>
-		<string>Tom McKnight</string>
+		<string>Chris Hollindale</string>
 		<key>description</key>
 		<string>Search and get info on movies or TV shows</string>
 		<key>disabled</key>
@@ -355,7 +355,7 @@
 			</dict>
 		</array>
 		<key>readme</key>
-		<string>Run the Movie Search Keyword (default: `movie`) or TV Search Keyword (default: `tv`) to search for movies and TV shows, respectively. Press ↩ to get details and ratings.
+		<string>Run the Movie Search Keyword (default: `mv`) or TV Search Keyword (default: `tv`) to search for movies and TV shows, respectively. Press ↩ to get details and ratings.
 
 ![](img/about/walle-search.png)
 ![](img/about/walle-details.png)</string>
@@ -424,7 +424,7 @@
 				<key>config</key>
 				<dict>
 					<key>default</key>
-					<string>movie</string>
+					<string>mv</string>
 					<key>placeholder</key>
 					<string></string>
 					<key>required</key>
@@ -548,7 +548,7 @@
 				<key>config</key>
 				<dict>
 					<key>default</key>
-					<true/>
+					<false/>
 					<key>required</key>
 					<false/>
 					<key>text</key>
@@ -565,7 +565,7 @@
 				<key>config</key>
 				<dict>
 					<key>default</key>
-					<true/>
+					<false/>
 					<key>required</key>
 					<false/>
 					<key>text</key>
@@ -601,8 +601,8 @@
 			</dict>
 		</array>
 		<key>version</key>
-		<string>2.21.0</string>
+		<string>1.0</string>
 		<key>webaddress</key>
-		<string>https://github.com/tmcknight/Movie-and-TV-Show-Search-Alfred-Workflow</string>
+		<string>https://github.com/chrishol/Movie-and-TV-Show-Search-Alfred-Workflow</string>
 	</dict>
 </plist>

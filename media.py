@@ -27,7 +27,7 @@ LETTERBOXD_URL = 'https://letterboxd.com/tmdb/'
 SIMKL_URL = 'https://simkl.com/search'
 MOVIECHAT_URL = 'https://moviechat.org/'
 CACHEDIR = os.path.expanduser(
-    '~/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data/com.mcknight.movies')
+    '~/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data/com.chrishol.movies')
 HTML_SUMMARY_FILE = os.path.join(CACHEDIR, "item.html")
 
 INCLUDE_LETTERBOXD = os.environ['include_letterboxd'] == "1"
